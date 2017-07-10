@@ -1,6 +1,11 @@
 {
   "scripts": {
-    "api": "node ratingsAPI.js"
+    "api": "node ratingsAPI.js",
+    "format": "prettier --list-different --single-quote --print-width=120 \"js/**/*.{js,jsx}\"",
+    "lint": "eslint **/*.{js,jsx} --quiet",
+    "build": "webpack",
+    "watch": "webpack --watch",
+    "server": "webpack-dev-server --hot --inline --port 3000 --open"
   },
   "dependencies": {
     "axios": "0.16.1",
