@@ -1,9 +1,11 @@
 import React from 'react';
+
+import ShowCard from './ShowCard';
 import preload from './../data.json';
 
 const Search = () => (
   <div className='search'>
-    {preload.shows.map(show => <h3>{show.title}</h3>)}
+    {preload.shows.map(show => <ShowCard key={show.imdbID} {...show} />)}
   </div>
 );
 
