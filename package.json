@@ -8,7 +8,8 @@
     "lint": "eslint **/*.{js,jsx} --quiet",
     "build": "webpack",
     "watch": "webpack --watch",
-    "server": "webpack-dev-server --hot --inline --port 3000 --open"
+    "server": "webpack-dev-server --hot --inline --port 8080 --open",
+    "dev": "webpack-dev-server --open"
   },
   "jest": {
     "snapshotSerializers": ["jest-serializer-enzyme"]
