@@ -5,10 +5,8 @@
   "plugins": ["prettier"],
   "parserOptions": {
     "ecmaVersion": 2016,
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "jsx": true
-    }
+    "sourceType": "module"
+
   },
   "env": {
     "es6": true,
@@ -16,7 +14,17 @@
     "node": true
   },
   "rules": {
-    "linebreak-style": [0, "LF"],
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+    "linebreak-style": [0, "unix"],
+    "react/jsx-filename-extension": [0, { "extensions": [".js", ".jsx"] }],
+    "no-console": 0,
+    "semi": [2, "always"],
+    "eol-last": 2,
+    "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 1 }],
+    "react/prefer-stateless-function": 0,
+    "react/prefer-es6-class": 0,
+    "react/no-string-refs": 1,
+    "import/no-extraneous-dependencies": 0,
+    "import/extensions": 0,
+     "react/jsx-filename-extension": [0, { "extensions": [".js", ".jsx"] }]
   }
 }
