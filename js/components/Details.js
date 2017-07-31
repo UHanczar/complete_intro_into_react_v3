@@ -25,7 +25,7 @@ class Details extends Component {
   render() {
     const { title, description, year, poster, trailer } = this.props.show;
 
-    let ratingComponent = this.state.apiData.rating ? <h3>{this.state.apiData.rating}</h3> : <Spinner />;
+    const ratingComponent = this.state.apiData.rating ? <h3>{this.state.apiData.rating}</h3> : <Spinner />;
     return (
       <div className='details'>
         <Header />
