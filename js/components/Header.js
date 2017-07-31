@@ -2,8 +2,11 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-const Header = (props: {showSearch?: boolean, handleSearchTermChange?: Function, searchTerm?: string }) => {
+import { setSearchTerm } from './../actions/actionCreators';
+
+const Header = (props: {showSearch?: boolean, handleSearchTermChange: Function, searchTerm: string }) => {
 
   const  searchInput = props.showSearch ? <input type="text" placeholder="Search" value={props.searchTerm} onChange={props.handleSearchTermChange} /> : <Link to='/search'>Back to Search</Link>;
 
@@ -17,8 +20,14 @@ const Header = (props: {showSearch?: boolean, handleSearchTermChange?: Function,
 
 Header.defaultProps = {
   showSearch: false,
-  handleSearchTermChange: function noop() {},
-  searchTerm: ''
 };
 
-export default Header;
+const mapStateToProps = (state) => ({ searchTerm: state.searchTerm, showSearch: state.showSearch });
+
+const mapDispatchToProps = (dispatch: Function) => ({
+  handleSearchTermChange(event) {
+    dispatch(setSearchTerm(event.target.value));
+  }
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
