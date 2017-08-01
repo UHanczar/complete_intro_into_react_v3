@@ -22,7 +22,7 @@ Header.defaultProps = {
   showSearch: false,
 };
 
-const mapStateToProps = (state) => ({ searchTerm: state.searchTerm, showSearch: state.showSearch });
+const mapStateToProps = (state) => ({ searchTerm: state.searchTerm });
 
 const mapDispatchToProps = (dispatch: Function) => ({
   handleSearchTermChange(event) {
