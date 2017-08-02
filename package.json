@@ -7,6 +7,7 @@
     "format": "prettier --list-different --single-quote --print-width=120 \"js/**/*.{js,jsx}\"",
     "lint": "eslint **/*.{js,jsx} --quiet",
     "build": "webpack",
+    "build:prod": "SET \"NODE_ENV=production\" && webpack -p",
     "watch": "webpack --watch",
     "server": "webpack-dev-server --hot --inline --port 8080 --open",
     "dev": "webpack-dev-server --open",
